@@ -1,9 +1,4 @@
-import type {
-	IExecuteSingleFunctions,
-	IN8nHttpFullResponse,
-	INodeExecutionData,
-	JsonObject,
-} from 'n8n-workflow';
+import type { IExecuteSingleFunctions, IN8nHttpFullResponse, INodeExecutionData, JsonObject, } from 'n8n-workflow';
 import { NodeApiError } from 'n8n-workflow';
 
 function isJsonObject(obj: unknown): obj is JsonObject {
@@ -26,4 +21,7 @@ export async function sendErrorPostReceive(
 		} as JsonObject);
 	}
 	return data;
+}
+export function isString(val: unknown): val is string {
+	return typeof val === 'string';
 }

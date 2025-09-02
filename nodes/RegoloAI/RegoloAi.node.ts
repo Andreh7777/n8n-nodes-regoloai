@@ -3,7 +3,7 @@ import { NodeConnectionType } from 'n8n-workflow';
 
 import { chatFields, chatOperations } from './ChatDescription';
 import { imageFields, imageOperations } from './ImageDescription';
-import { textFields, textOperations } from './TextDescription';
+import { textFields, textOperations } from './EmbedDescription';
 
 export class RegoloAi implements INodeType {
 	description: INodeTypeDescription = {
@@ -17,7 +17,6 @@ export class RegoloAi implements INodeType {
 		defaults: { name: 'Regolo AI' },
 		inputs: [NodeConnectionType.Main],
 		outputs: [NodeConnectionType.Main],
-		usableAsTool: true,
 		credentials: [{ name: 'regoloApi', required: true }],
 		requestDefaults: {
 			baseURL: '={{$credentials.url}}',
@@ -34,7 +33,7 @@ export class RegoloAi implements INodeType {
 					{ name: 'Image', value: 'image' },
 					{ name: 'Text', value: 'text' },
 				],
-				default: 'text',
+				default: 'chat',
 			},
 
 			...chatOperations,

@@ -1,10 +1,6 @@
 import type { INodeExecutionData, INodeProperties } from 'n8n-workflow';
-import { sendErrorPostReceive } from './GenericFunctions';
+import { isString, sendErrorPostReceive } from './GenericFunctions';
 import { Buffer } from 'buffer';
-
-function isString(val: unknown): val is string {
-	return typeof val === 'string';
-}
 
 export const imageOperations: INodeProperties[] = [
 	{
