@@ -1,2 +1,20 @@
+# IDE / OS
+.idea/
+.vscode/
 .DS_Store
+
+# Test and coverage
+__tests__/
+coverage/
+jest.config.js
+
+# TypeScript sources and configs
+nodes/
+tsconfig.json
 *.tsbuildinfo
+
+# Build tools / configs
+.eslintrc.js
+.eslintrc.prepublish.js
+.prettierrc.js
+gulpfile.js
